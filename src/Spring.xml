@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- There are no bean definition here -->
+	
+	<!-- Component scaning from this base package -->
+	<context:component-scan base-package="com.doj.spring"/>
+	
+    
+    <!-- This is configuration file about Spring we are going to use importing other files(Java Config, XML Config) here-->
+    
+    <!-- Importing XML Configuration files -->
+    <import resource="TyreMetaConfiguration.xml"/>
+    <import resource="BodyMetaConfiguration.xml"/>
+    
+    <!-- Importing Java Configuration files -->
+    <bean class="com.doj.spring.CarMetaConfiguration" scope="singleton"></bean>
+    <bean class="com.doj.spring.EngineMetaConfiguration"></bean>
+</beans>
